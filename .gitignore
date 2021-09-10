@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/simplest_vp9_codec/bin/*.vp9
+/simplest_vp9_codec/.vs
+/simplest_vp9_codec/vpx/Win32
+/simplest_vp9_codec/vpx/*.user
+/simplest_vp9_codec/vpxdec/Win32
+/simplest_vp9_codec/vpxdec/*.user
+/simplest_vp9_codec/vpxenc/*.user
