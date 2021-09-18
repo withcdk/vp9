@@ -142,9 +142,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="test1.cpp" />
+    <ClCompile Include="vp8_dx_iface.cpp" />
+    <ClCompile Include="vp9_dx_iface.cpp" />
+    <ClCompile Include="vpx_codec.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test1.h" />
+    <ClInclude Include="vp8dx.h" />
+    <ClInclude Include="vpx_codec.h" />
+    <ClInclude Include="vpx_codec_internal.h" />
+    <ClInclude Include="vpx_config.h" />
+    <ClInclude Include="vpx_decoder.h" />
+    <ClInclude Include="vpx_version.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

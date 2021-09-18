@@ -18,9 +18,36 @@
     <ClCompile Include="test1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="vpx_codec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vp8_dx_iface.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vp9_dx_iface.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vpx_config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vpx_codec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vpx_codec_internal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vp8dx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vpx_version.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vpx_decoder.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

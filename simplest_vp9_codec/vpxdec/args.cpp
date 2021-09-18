@@ -3,9 +3,11 @@
 #include <string.h>//memcpy()
 #include <stdint.h>
 
+
 #include "args.h"
 
 #include "tools_common.h"
+
 
 
 
@@ -96,6 +98,7 @@ int arg_match(struct Arg* arg, const struct ArgDef* def, char** argv)
         *arg = tempArg;
         return 1;
     }
+
     return 0;
 }
 
@@ -121,9 +124,44 @@ unsigned int arg_parse_uint(const struct Arg *arg)
             rawVal);// x86: ld -> unsigned long int
     }
     die("Option %s: Invalid character '%c'\n", arg->pName, *endPtr);
+
     return 0;
 
 }
+
+
+/*******************************************************
+Description: show the usage of options
+Input para:
+Return value: 
+Author£ºDe-Kai Chen    <cdk5@foxmail.com>
+*********************************************************/
+void arg_show_usage(FILE* fp, const struct ArgDef* const* defs)
+{
+    char optionText[40] = { 0 };
+    for (; *defs; defs++)
+    {
+        const struct ArgDef* def = *defs;
+        char* shortVal = def->iHasVal ? " <arg>" : "";
+        char* longVal = def->iHasVal ? "=<arg>" : "";
+
+        if (def->chShortName && def->chLongName)
+        {
+            char* comma = def->iHasVal ? "," : ",      ";
+            snprintf(optionText, 37, "-%s%s%s --%s%6s", def->chShortName, shortVal, comma,
+                def->chLongName, longVal);
+        }
+        else if (def->chShortName)
+            snprintf(optionText, 37, "-%s%s", def->chShortName, shortVal);
+        else if (def->chLongName)
+            snprintf(optionText, 37, "          --%s%s", def->chLongName, longVal);
+
+        fprintf(fp, "  %-37s\t%s\n", optionText, def->chDesc);
+       
+    }
+
+}
+
 
 
 

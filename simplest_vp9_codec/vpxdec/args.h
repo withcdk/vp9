@@ -3,10 +3,9 @@
 
 #ifndef VPX_ARGS_H_
 #define VPX_ARGS_H_
-
+#include <stdio.h>//FILE
 
 #ifdef __cplusplus
-
 extern "C" {
 #endif
 
@@ -21,23 +20,16 @@ struct Arg
 };
 
 
-struct ArgEnumList
-{
-    const char* name;
-    int val;
-};
-
 
 typedef struct ArgDef {
     const char* chShortName;
     const char* chLongName;
     int iHasVal;// whether there is a value after the parameter, -o ...    --limit=...
-    const char* chDesc;
-    const struct ArgEnumList* Enums;
+    const char* chDesc;//description
 } ArgDef_t;
 
 #define ARG_DEF(s, l, v, d) \
-    { s, l, v, d, NULL }
+    { s, l, v, d }
 
 
 
@@ -45,10 +37,10 @@ char** argv_dup(int argc, const char** argv);
 int arg_match(struct Arg *arg, const struct ArgDef *def, char **argv);
 struct Arg arg_init(char **argv);
 unsigned int arg_parse_uint(const struct Arg *arg);
+void arg_show_usage(FILE *fp, const struct ArgDef* const* defs);
 
 
 #ifdef __cplusplus
-
 }// extern "C"
 #endif
 
